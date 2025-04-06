@@ -7,27 +7,38 @@
     <p class="mt-2 text-muted" style="font-size: 0.875rem;">We will try to benchmark your code as soon as possible.</p>
 </div>
 
-
 <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
             <th>Filename</th>
             <th>User</th>
             <th>Submission Time</th>
-            <th>Result Date</th>
+            <th>Benchmark Ready</th>
+            <th>Benchmark Date</th>
             <th>Benchmark Version</th>
-            <th>Benchmark Details</th>
+            <th>Plot 1</th>
+            <th>Plot 2</th>
+            <th>Plot 3</th>
+            <th>Plot 4</th>
         </tr>
     </thead>
     <tbody>
+        {% for SubmittedFile in AllSubmittedFiles %}
         <tr>
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td>$320,800</td>
+            <td>{{ SubmittedFile.filename }}</td>
+            <td>{{ SubmittedFile.user.username }}</td>
+            <td>{{ SubmittedFile.time_submitted }}</td>
+            <td>{{ SubmittedFile.benchmark_ready }}</td>
+            <td>{{ SubmittedFile.benchmark_date }}</td>
+            <td>{{ SubmittedFile.benchmark_version }}</td>
+
+            <td><img src="{{ SubmittedFile.plot1.url }}" alt="{{ SubmittedFile.plot1.name }}" class="img-thumbnail" style="max-height: 100px;"></td>
+            <td><img src="{{ SubmittedFile.plot2.url }}" alt="{{ SubmittedFile.plot2.name }}" class="img-thumbnail" style="max-height: 100px;"></td>
+            <td><img src="{{ SubmittedFile.plot3.url }}" alt="{{ SubmittedFile.plot3.name }}" class="img-thumbnail" style="max-height: 100px;"></td>
+            <td><img src="{{ SubmittedFile.plot4.url }}" alt="{{ SubmittedFile.plot4.name }}" class="img-thumbnail" style="max-height: 100px;"></td>
+
         </tr>
+        {% endfor %}
     </tbody>
 </table>
 

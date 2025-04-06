@@ -2,6 +2,17 @@
 {% load static %}
 {% block content %}
 
-<h1> This is Benchmarking </h1>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Upload Your File</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="file" class="form-label">Select File:</label>
+            <input type="file" name="submitted_file" id="file" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Upload</button>
+    </form>
+</div>
+
 
 {% endblock %}

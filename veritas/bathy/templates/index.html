@@ -1,0 +1,117 @@
+{% block title %}Home | My Website{% endblock %}
+
+{% block content %}
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satellite Bathymetry Consultancy</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <style>
+        .hero-section {
+            background: url("{% static 'images/ocean-satellite.jpg' %}") no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Bathymetry Experts</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="text-center">
+            <h1>Welcome to Our Consultancy</h1>
+            <p>Mapping the Unseen Depths with Precision</p>
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="container my-5" id="about">
+        <h2>About Us</h2>
+        <p>We specialize in satellite-based bathymetry analysis, offering innovative solutions to map ocean depths efficiently and accurately.</p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="container my-5" id="services">
+        <h2>Our Services</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Depth Mapping</h5>
+                        <p class="card-text">Precision-driven analysis using satellite data for detailed depth mapping.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Consultation</h5>
+                        <p class="card-text">Expert advice on interpreting and utilizing bathymetry data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="container my-5" id="contact">
+        <h2>Contact Us</h2>
+        <form method="post" action="#">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-4">
+        <p>&copy; 2025 Bathymetry Experts. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
+
+
+
+{% endblock %}

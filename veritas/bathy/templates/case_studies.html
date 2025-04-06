@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Image Column -->
+        <div class="col-md-6">
+            <img src="{% static 'undersea1.jpeg' %}" class="img-fluid" alt="Description of the image" style="border-radius: 8px;">
+        </div>
+        <!-- Text Column -->
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h2>Case Study 1</h2>
+            <p class="text-muted">This is some smaller text that provides more details about the content shown in this section. You can add as much or as little text as needed.</p>
+            <a href="{% url 'index' %}" class="btn btn-primary"> Download Case Study 1 </a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Image Column -->
+        <div class="col-md-6">
+            <img src="{% static 'undersea2.jpeg' %}" class="img-fluid" alt="Description of the image" style="border-radius: 8px;">
+        </div>
+        <!-- Text Column -->
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h2>Case Study 1</h2>
+            <p class="text-muted">This is some smaller text that provides more details about the content shown in this section. You can add as much or as little text as needed.</p>
+            <a href="{% url 'index' %}" class="btn btn-primary"> Download Case Study 1 </a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Image Column -->
+        <div class="col-md-6">
+            <img src="{% static 'undersea3.jpeg' %}" class="img-fluid" alt="Description of the image" style="border-radius: 8px;">
+        </div>
+        <!-- Text Column -->
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h2>Case Study 3</h2>
+            <p class="text-muted">This is some smaller text that provides more details about the content shown in this section. You can add as much or as little text as needed.</p>
+            <a href="{% url 'index' %}" class="btn btn-primary"> Download Case Study 1 </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

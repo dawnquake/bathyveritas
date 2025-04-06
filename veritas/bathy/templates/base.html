@@ -1,88 +1,104 @@
-<!--
-TODO
-
-1. Header and footer improvements
-2. 
-
--->
-
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Website{% endblock %}</title>
+    <title>BathyVeritas</title>
+    <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Footer -->
+
     <style>
-        html, body {
+        body{
+            margin: 0;
+            padding: 0;
             height: 100%;
+            z-index: 1;
+
+            
         }
-        body {
-            display: flex;
-            flex-direction: column;
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+
         }
-        .content {
-            flex: 1;
+        .video-container video {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            z-index: -1;
+
         }
-        .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 1rem 0;
+
+        .custom-card-body {
+            background-color: skyblue; /* Light red background */
+        }
+
+        .footer-bar {
+            background-color: #f8f9fa; /* Light background color */
+            padding: 10px 0; /* Vertical padding */
+            border-top: 1px solid #ddd; /* Optional top border for separation */
+        }
+        .footer-bar p {
+            margin: 0;
+        }
+
+        .offering-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        .contact-button {
+            margin-top: 30px;
+        }
+
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-            </div>
-        </nav>
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}">BathyVeritas</a>
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'case_studies' %}">Case Studies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'benchmarking' %}">Benchmarking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'product_offering' %}">Product Offering</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a></li>
+                </ul>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <h5></h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Link 1</a></li>
-                        <li><a href="#" class="text-white">Link 2</a></li>
-                        <li><a href="#" class="text-white">Link 3</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm">
-                    <h5>Column 2</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Link 1</a></li>
-                        <li><a href="#" class="text-white">Link 2</a></li>
-                        <li><a href="#" class="text-white">Link 3</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm">
-                    <h5>Column 3</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Link 1</a></li>
-                        <li><a href="#" class="text-white">Link 2</a></li>
-                        <li><a href="#" class="text-white">Link 3</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm">
-                    <h5>Column 4</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Link 1</a></li>
-                        <li><a href="#" class="text-white">Link 2</a></li>
-                        <li><a href="#" class="text-white">Link 3</a></li>
-                    </ul>
-                </div>
-            </div>
+                <ul class="navbar-nav navbar-right">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+                </ul>            
+
         </div>
-    </footer>
+    </nav>
+
+
+    {% block content %}
+    {% endblock %}
+
 </body>
+
+<footer class="footer-bar text-center">
+    <div class="container">
+        <p>2025 BathyVeritas</p>
+    </div>
+</footer>
+
+
 </html>

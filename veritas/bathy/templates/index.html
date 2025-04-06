@@ -1,116 +1,103 @@
-{% block title %}Home | My Website{% endblock %}
-
+{% extends "base.html" %}
+{% load static %}
 {% block content %}
 
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="{% static 'waves.mp4' %}" type="video/mp4">
+        </video>
+    </div>
 
-
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satellite Bathymetry Consultancy</title>
-    <!-- Link to Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-    <style>
-        .hero-section {
-            background: url("{% static 'images/ocean-satellite.jpg' %}") no-repeat center center;
-            background-size: cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-    </style>
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Bathymetry Experts</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+    <!-- About Us Section -->
+    <div class="container my-5" id="services">
+        <h2 class="text-white"> About BathyVeritas </h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body custom-card-body">
+                        <h5 class="card-title">BathyVeritas</h5>
+                        <p class="card-text"> BathyVeritas delivers unprecedented accuracy and depth in bathymetric mapping using 
+                            advanced AI-powered Satellite-Derived Bathymetry, integrating optical, wave, and synthetic data. 
+                            We leverage unique industry partnerships and robust benchmarking standards. </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="text-center">
-            <h1>Welcome to Our Consultancy</h1>
-            <p>Mapping the Unseen Depths with Precision</p>
-            <a href="#contact" class="btn btn-primary">Get in Touch</a>
-        </div>
     </div>
-
-    <!-- About Section -->
-    <div class="container my-5" id="about">
-        <h2>About Us</h2>
-        <p>We specialize in satellite-based bathymetry analysis, offering innovative solutions to map ocean depths efficiently and accurately.</p>
-    </div>
+    
 
     <!-- Services Section -->
-    <div class="container my-5" id="services">
-        <h2>Our Services</h2>
+    <div class="container my-5" id="services" style="padding-top: 22rem;">
         <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Depth Mapping</h5>
-                        <p class="card-text">Precision-driven analysis using satellite data for detailed depth mapping.</p>
-                    </div>
-                </div>
+
+            <!-- Text Column -->
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h2>Why Bathymetry?</h2>
+                <p class="text-muted">Defense, safety, climate resilience (coral monitoring, erosion control, sea-level rise). 
+                    Bathymetry is fundamental to ocean and coastal modelling.
+                    Coastal areas and islands lack affordable, accurate bathymetry data essential for climate resilience (erosion, flooding, habitat monitoring). 
+                    These issues are exacerbated in low income, low lying island nations 
+                    <p class="text-muted">Current shallow-water mapping is inaccurate, expensive, and rarely updated, posing safety, economic, 
+                    and environmental risks to dredging, coastal protection, fishing, marine industries and defence operations. 
+                    We provide affordable, higher accuracy maps.</p>
+                    <p class="text-muted">
+                    Accurate, cost-effective bathymetric mapping—enabling coral reef protection, coastal resilience, and adaptive responses to climate impacts.
+                    </p>
             </div>
+            <!-- Image Column -->
             <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Data Consultation</h5>
-                        <p class="card-text">Expert advice on interpreting and utilizing bathymetry data.</p>
-                    </div>
-                </div>
+                <img src="{% static 'index1.jpeg' %}" class="img-fluid" alt="Description of the image" style="border-radius: 8px;">
             </div>
         </div>
     </div>
 
-    <!-- Contact Section -->
-    <div class="container my-5" id="contact">
-        <h2>Contact Us</h2>
-        <form method="post" action="#">
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+
+
+    <div class="container my-5" id="services" >
+        <div class="row">
+            <!-- Image Column -->
+            <div class="col-md-6">
+                <img src="{% static 'index2.jpeg' %}" class="img-fluid" alt="Description of the image" style="border-radius: 8px;">
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+            <!-- Text Column -->
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h2>How do we solve Bathymetry?</h2>
+                <p class="text-muted"> Optical Sattelite-Derived Bathymetry struggles with spatial generalization.  
+                    Our integration of DL, synthetic data, wave & optical data, and a growing bathymetric database allows to overcome 
+                    the mapping the worlds shallow waters more accurately. </p>
+                <p class="text-muted">
+                    Classical methods are outdated and result in weak benchmarks. 
+                    Our rigorous, open benchmark exposes their weaker performance, 
+                    while our cutting-edge methods uniquely leverage extensive dredging-company data partnerships. 
+                </p>
+                <p class="text-muted">
+                    Accurate, cost-effective bathymetric mapping—enabling coral reef protection, coastal resilience, 
+                    and adaptive responses to climate impacts. Base accuracy maps requiring no in situ data can be freely available perhaps. </p>
+                <p class="text-muted"> We offer tiered bathymetric data products: affordable general accuracy, 
+                    improved precision with customer-provided calibration data, or premium service including 
+                    site-specific measurements and detailed algorithmic interpolation. </p>
             </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center p-4">
-        <p>&copy; 2025 Bathymetry Experts. All Rights Reserved.</p>
-    </footer>
+    <div class="container my-5" id="services" >
+        <div class="row">
+            <!-- Text Column -->
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h2>Who do we work with?</h2>
+                <p class="text-muted">Primary customers include dredging companies, coastal governments managing protection efforts, 
+                    defense organizations, fisheries, marine researchers, and boat operators—stakeholders critically dependent on 
+                    accurate shallow-water bathymetry data.</p>
+            </div>
+            <!-- Image Column -->
+            <div class="col-md-6">
+                <img src="{% static 'index3.jpeg' %}" class="img-fluid" alt="Description of the image" style="border-radius: 8px;">
+            </div>
+        </div>
+    </div>
 
-    <!-- Bootstrap JS -->
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-</body>
-</html>
+
+
 
 
 

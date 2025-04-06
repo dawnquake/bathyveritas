@@ -31,11 +31,26 @@
             <td>{{ SubmittedFile.benchmark_ready }}</td>
             <td>{{ SubmittedFile.benchmark_date }}</td>
             <td>{{ SubmittedFile.benchmark_version }}</td>
-
+            {% if SubmittedFile.plot1.url != None %}
             <td><a href="{{ SubmittedFile.plot1.url }}"><img src="{{ SubmittedFile.plot1.url }}" alt="{{ SubmittedFile.plot1.name }}" class="img-thumbnail" style="max-height: 100px;"></a></td>
+            {% else %}
+            <td><p>Not Ready Yet</p></td>
+            {% endif %} 
+            {% if SubmittedFile.plot2.url != None %}
             <td><a href="{{ SubmittedFile.plot2.url }}"><img src="{{ SubmittedFile.plot2.url }}" alt="{{ SubmittedFile.plot2.name }}" class="img-thumbnail" style="max-height: 100px;"></a></td>
+            {% else %}
+            <td><p>Not Ready Yet</p></td>
+            {% endif %} 
+            {% if SubmittedFile.plot3.url != None %}
             <td><a href="{{ SubmittedFile.plot3.url }}"><img src="{{ SubmittedFile.plot3.url }}" alt="{{ SubmittedFile.plot3.name }}" class="img-thumbnail" style="max-height: 100px;"></a></td>
+            {% else %}
+            <td><p>Not Ready Yet</p></td>
+            {% endif %} 
+            {% if SubmittedFile.plot4.url != None %}
             <td><a href="{{ SubmittedFile.plot4.url }}"><img src="{{ SubmittedFile.plot4.url }}" alt="{{ SubmittedFile.plot4.name }}" class="img-thumbnail" style="max-height: 100px;"></a></td>
+            {% else %}
+            <td><p>Not Ready Yet</p></td>
+            {% endif %} 
 
         </tr>
         {% endfor %}

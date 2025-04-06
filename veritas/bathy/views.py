@@ -41,3 +41,9 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
+
+def submit_benchmark(request):
+    return render(request, 'submit_benchmark.html')
+
+def view_benchmark(request):
+    return render(request, 'view_benchmark.html')

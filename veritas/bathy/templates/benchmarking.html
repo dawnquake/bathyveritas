@@ -2,6 +2,35 @@
 {% load static %}
 {% block content %}
 
-<h1> This is Benchmarking </h1>
+<div class="d-flex justify-content-center align-items-center flex-column" style="height: 100;">
+    <a href="{% url 'submit_benchmark' %}" class="btn btn-primary btn-lg">Click here to submit code for Benchmark (Requires Login)</a>
+    <p class="mt-2 text-muted" style="font-size: 0.875rem;">We will try to benchmark your code as soon as possible.</p>
+</div>
+
+
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>User</th>
+            <th>Submission Time</th>
+            <th>Result Date</th>
+            <th>Benchmark Version</th>
+            <th>Benchmark Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011/04/25</td>
+            <td>$320,800</td>
+        </tr>
+    </tbody>
+</table>
+
+
 
 {% endblock %}

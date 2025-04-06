@@ -6,12 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BathyVeritas</title>
-    <!-- Link to Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 
-    <!-- Bootstrap JS -->
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <!-- Footer -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <style>
         body{
@@ -99,6 +96,23 @@
         <p>2025 BathyVeritas</p>
     </div>
 </footer>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<!-- Include Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<!-- Include Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Include DataTables JS -->
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap4.js"></script>
+
+<!-- Activate DataTables -->
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+</script>
 
 
 </html>
